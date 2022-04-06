@@ -3,10 +3,10 @@ package com.bcopstein.ctrlcorredor_v4_camadas.Interface;
 import java.util.List;
 
 import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.Corredor;
-import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.CorredorRepository;
 import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.Evento;
-import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.EventoRepository;
+import com.bcopstein.ctrlcorredor_v4_camadas.LogicaNegocios.CorredoresServicos;
 import com.bcopstein.ctrlcorredor_v4_camadas.LogicaNegocios.EstatisticasDTO;
+import com.bcopstein.ctrlcorredor_v4_camadas.LogicaNegocios.EventosServicos;
 import com.bcopstein.ctrlcorredor_v4_camadas.LogicaNegocios.PerformanceDTO;
 import com.bcopstein.ctrlcorredor_v4_camadas.LogicaNegocios.ServicoEstatistica;
 
@@ -22,42 +22,39 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/ctrlCorridas")
 public class CtrlCorridasController {
-    private CorredorRepository corredorRep;
-    private EventoRepository eventoRep;
+    private EventosServicos servicoEventos;
+    private CorredoresServicos servicoCorredor;
     private ServicoEstatistica servicoEstatistica;
 
     @Autowired
-    public CtrlCorridasController(ServicoEstatistica servicoEstatistica,CorredorRepository corredorRep,EventoRepository eventoRep) {
+    public CtrlCorridasController(ServicoEstatistica servicoEstatistica,EventosServicos servicoEventos,CorredoresServicos servicoCorredor) {
         this.servicoEstatistica = servicoEstatistica;
-        this.corredorRep = corredorRep;
-        this.eventoRep = eventoRep;
+        this.servicoCorredor =servicoCorredor;
+        this.servicoEventos = servicoEventos;
     }
 
     @GetMapping("/corredor")
     @CrossOrigin(origins = "*")
     public List<Corredor> consultaCorredor() {
-        return corredorRep.todos();
+        return servicoCorredor.corredores();
     }
 
     @PostMapping("/corredor")
     @CrossOrigin(origins = "*")
     public boolean cadastraCorredor(@RequestBody final Corredor corredor) {
-        corredorRep.removeTodos();
-        corredorRep.cadastra(corredor);
-        return true;
+        return servicoCorredor.cadastraCorredor(corredor);
     }
 
     @GetMapping("/eventos")
     @CrossOrigin(origins = "*")
     public List<Evento> consultaEventos() {
-        return eventoRep.todos();
+        return servicoEventos.eventos();
     }
 
     @PostMapping("/eventos") // adiciona evento no único corredor
     @CrossOrigin(origins = "*")
     public boolean informaEvento(@RequestBody final Evento evento) {
-        eventoRep.cadastra(evento);
-        return true;
+        return servicoEventos.cadastraEvento(evento);
     }
 
     @GetMapping("/estatisticas")

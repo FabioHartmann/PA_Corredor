@@ -4,24 +4,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.Evento;
-import com.bcopstein.ctrlcorredor_v4_camadas.AcessoDados.EventoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ServicoEstatistica {
-    private EventoRepository eventoRep;
+    private IEventoRepository eventoRep;
 
     @Autowired
-    public ServicoEstatistica(EventoRepository eventoRepository){
+    public ServicoEstatistica(IEventoRepository eventoRepository){
         this.eventoRep = eventoRepository;
     }
 
     public EstatisticasDTO calculaEstatisticas(int distancia){
         // Seleciona os eventos da distancia informada
         List<Evento> eventos = 
-            eventoRep.todos()
+            eventoRep.recovery()
                 .stream()
                 .filter(e->e.getDistancia() == distancia)
                 .collect(Collectors.toList());
@@ -62,7 +61,7 @@ public class ServicoEstatistica {
 
     public PerformanceDTO calculaAumentoPerformance(int distancia,int ano){
         List<Evento> eventos = eventoRep
-                        .todos()
+                        .recovery()
                         .stream()
                         .filter(e->e.getAno() == ano)
                         .collect(Collectors.toList());
