@@ -14,7 +14,7 @@
 	<name>ctrlcorredor_v4</name>
 	<description>Controle corredor versão camadas</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -45,7 +45,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+		  			<mainClass>com.bcopstein.ctrlcorredor_v4_camadas.CtrlcorredorV4Application</mainClass>
+				</configuration>
 			</plugin>
+
+			      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.4</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
 
