@@ -1,6 +1,9 @@
-package com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios;
+package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao;
 
 import java.util.List;
+
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Adaptadores.AcessoDados.IEventoRepository;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.Evento;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

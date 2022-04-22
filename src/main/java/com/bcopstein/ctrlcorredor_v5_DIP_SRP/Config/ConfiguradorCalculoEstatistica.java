@@ -1,9 +1,9 @@
-package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Interface;
+package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Config;
 
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.EstatisticaDesconsidera;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.EstatisticaNormal;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.ICalculoEstatistica;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.IEventoRepository;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Adaptadores.AcessoDados.IEventoRepository;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.EstatisticaDesconsidera;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.EstatisticaNormal;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.ICalculoEstatistica;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

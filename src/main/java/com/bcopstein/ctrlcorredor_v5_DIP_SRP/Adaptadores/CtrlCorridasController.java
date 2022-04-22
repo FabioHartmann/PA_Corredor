@@ -1,14 +1,14 @@
-package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Interface;
+package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Adaptadores;
 
 import java.util.List;
 
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.ServicoCorredor;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.ServicoEstatistica;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.ServicoEvento;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.Dto.EstatisticasDTO;
+import com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.Dto.PerformanceDTO;
 import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.Corredor;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.EstatisticasDTO;
 import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.Evento;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.PerformanceDTO;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.ServicoCorredor;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.ServicoEstatistica;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.ServicoEvento;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

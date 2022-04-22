@@ -1,9 +1,8 @@
-package com.bcopstein.ctrlcorredor_v5_DIP_SRP.AcessoDados;
+package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Adaptadores.AcessoDados;
 
 import java.util.List;
 
 import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.Evento;
-import com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios.IEventoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

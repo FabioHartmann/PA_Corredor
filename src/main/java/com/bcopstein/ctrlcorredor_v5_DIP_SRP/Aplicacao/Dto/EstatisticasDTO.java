@@ -1,4 +1,4 @@
-package com.bcopstein.ctrlcorredor_v5_DIP_SRP.LogicaNegocios;
+package com.bcopstein.ctrlcorredor_v5_DIP_SRP.Aplicacao.Dto;
 
 public class EstatisticasDTO {
     private double media;
